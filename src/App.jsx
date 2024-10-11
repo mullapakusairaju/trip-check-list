@@ -13,9 +13,9 @@ function App() {
   }
 
   function deleteItem(delItem) {
-    setItemList((items) =>
-      getItemList.filter((items) => getItemList.getItem !== items.delItem)
-    );
+    console.log(delItem);
+    setItemList((items) => items.filter((item) => item.getItem !== delItem));
+    console.log(getItemList);
   }
 
   return (
