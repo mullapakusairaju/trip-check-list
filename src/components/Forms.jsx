@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "../stylesshets/Forms.css";
 
-export default function Forms() {
+export default function Forms({ addItem }) {
   const [getItem, setItem] = useState("");
-  const [getBrand, setBrand] = useState("");
+  const [getBrand, setBrand] = useState("Oneplus");
 
   const BrandType = ["Oneplus", "MacBook", "Fosil"];
 
@@ -14,6 +14,8 @@ export default function Forms() {
 
     const newItem = { getItem, getBrand, id: Date.now };
     console.log(newItem);
+
+    addItem(newItem);
 
     setBrand("Oneplus");
     setItem("");
@@ -26,9 +28,9 @@ export default function Forms() {
         value={getBrand}
         onChange={(e) => setBrand(e.target.value)}
       >
-        {BrandType.map((num) => (
-          <option value={num} key={num}>
-            {num}
+        {BrandType.map((Brand) => (
+          <option value={Brand} key={Brand}>
+            {Brand}
           </option>
         ))}
       </select>

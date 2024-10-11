@@ -9,7 +9,7 @@ export default function Items({ items }) {
   return (
     <div className="Items ">
       <p className="Items">
-        {items.Name}-{items.Brand}
+        {items.getItem}-{items.getBrand}
         <span className="deleteBtn">
           <button onClick={deleteItem}>x</button>
         </span>

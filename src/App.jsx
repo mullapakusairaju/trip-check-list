@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Forms from "./components/Forms";
 import Logo from "./components/Logo";
@@ -5,25 +6,17 @@ import PackingList from "./components/PackingList";
 import Stats from "./components/Stats";
 
 function App() {
-  const itemList = [
-    {
-      id: 1,
-      Name: "Phone",
-      Brand: "OnePlus",
-    },
+  const [getItemList, setItemList] = useState([]);
 
-    {
-      id: 2,
-      Name: "Macbook",
-      Brand: "Apple",
-    },
-  ];
+  function addItemList(item) {
+    setItemList((e) => [...e, item]);
+  }
 
   return (
     <div className="App">
       <Logo></Logo>
-      <Forms></Forms>
-      <PackingList itemList={itemList}></PackingList>
+      <Forms addItem={addItemList}></Forms>
+      <PackingList itemList={getItemList}></PackingList>
       <Stats></Stats>
     </div>
   );

@@ -7,7 +7,7 @@ export default function PackingList({ itemList }) {
     <div className="PackingListCard d-flex row">
       <ul className="d-flex justify-content-around">
         {itemList.map((e) => (
-          <Items items={e} key={e.id} />
+          <Items items={e} key={e.getItem} />
         ))}
       </ul>
     </div>
