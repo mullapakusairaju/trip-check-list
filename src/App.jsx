@@ -12,11 +12,17 @@ function App() {
     setItemList((e) => [...e, item]);
   }
 
+  function deleteItem(delItem) {
+    setItemList((items) =>
+      getItemList.filter((items) => getItemList.getItem !== items.delItem)
+    );
+  }
+
   return (
     <div className="App">
       <Logo></Logo>
       <Forms addItem={addItemList}></Forms>
-      <PackingList itemList={getItemList}></PackingList>
+      <PackingList itemList={getItemList} deleteItem={deleteItem}></PackingList>
       <Stats></Stats>
     </div>
   );
