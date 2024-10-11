@@ -1,0 +1,24 @@
+.formsCard{
+
+    display: flex;
+    justify-content: center;
+    background-color:rgba(198, 86, 6, 0.587);
+    
+}
+
+.selectItem , .inputItemBox , .addBtn{
+    height: 32px;
+    align-self: center;
+    padding: 0px 4px;
+    margin-left: 16px;
+    border-radius: 8px;
+}
+
+.selectItem , .inputItemBox {
+    background-color: beige;
+}
+.addBtn
+{
+    background-color: rgb(167, 217, 217);
+}
+
