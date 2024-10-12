@@ -12,7 +12,7 @@ export default function Forms({ addItem }) {
 
     if (!getItem) return;
 
-    const newItem = { getItem, getBrand, id: Date.now };
+    const newItem = { getItem, getBrand, getBuy: false };
     console.log(newItem);
 
     addItem(newItem);

@@ -22,7 +22,9 @@ function App() {
     console.log(checkedItem);
     setItemList((items) =>
       items.map((item) =>
-        item.getItem === checkedItem ? { ...item, buy: !item.buy } : item.buy
+        item.getItem === checkedItem
+          ? { ...item, getBuy: !item.getBuy }
+          : { ...item, getBuy: item.getBuy }
       )
     );
   }
@@ -35,7 +37,7 @@ function App() {
         deleteItem={deleteItem}
         handleCheckedToggle={handleCheckedToggle}
       ></PackingList>
-      <Stats></Stats>
+      <Stats getItemList={getItemList}></Stats>
     </div>
   );
 }

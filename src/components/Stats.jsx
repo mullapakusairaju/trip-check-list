@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "../stylesshets/Stats.css";
+import BuyItems from "./BuyItems";
 
-export default function Stats() {
+export default function Stats({ getItemList }) {
+  const num = getItemList.length;
+
   return (
     <div className="statsCard">
-      <h3>Stats Footer</h3>
+      {getItemList.map((e) => (
+        <BuyItems buyItems={e} key={e.getItem} num={num} />
+      ))}
     </div>
   );
 }
