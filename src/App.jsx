@@ -18,11 +18,23 @@ function App() {
     console.log(getItemList);
   }
 
+  function handleCheckedToggle(checkedItem) {
+    console.log(checkedItem);
+    setItemList((items) =>
+      items.map((item) =>
+        item.getItem === checkedItem ? { ...item, buy: !item.buy } : item.buy
+      )
+    );
+  }
   return (
     <div className="App">
       <Logo></Logo>
       <Forms addItem={addItemList}></Forms>
-      <PackingList itemList={getItemList} deleteItem={deleteItem}></PackingList>
+      <PackingList
+        itemList={getItemList}
+        deleteItem={deleteItem}
+        handleCheckedToggle={handleCheckedToggle}
+      ></PackingList>
       <Stats></Stats>
     </div>
   );
